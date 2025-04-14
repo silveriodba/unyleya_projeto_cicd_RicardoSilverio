@@ -49,6 +49,7 @@ stages:
     displayName: "Implantação no Kubernetes"
     pool:
       vmImage: ubuntu-latest
+      environment: ricardosilveriokubernets
     
     steps:
     - task: HelmInstaller@0
@@ -68,4 +69,4 @@ stages:
         command: 'upgrade'
         chartName: 'caminho-do-helm-chart'
         releaseName: 'nome-da-release'
-        arguments: '--set image.repository=containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio,image.tag=$(tag)''
+        arguments: '--set image.repository=containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio,image.tag=$(tag)'
