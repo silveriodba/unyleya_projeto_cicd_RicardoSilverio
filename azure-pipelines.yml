@@ -49,7 +49,7 @@ stages:
     displayName: "Implantação no Kubernetes"
     pool:
       vmImage: ubuntu-latest
-    environment: Kubernetes-CD
+    
     steps:
     - task: HelmInstaller@0
       inputs:
