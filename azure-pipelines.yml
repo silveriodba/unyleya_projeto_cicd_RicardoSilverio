@@ -60,6 +60,7 @@ stages:
     - script: |
         helm version
         helm list --all
+        kubectl get nodes
       displayName: "Verificar Helm e Releases"
 
     - task: HelmDeploy@0
