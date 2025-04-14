@@ -64,7 +64,7 @@ stages:
     - task: HelmDeploy@0
       inputs:
         connectionType: 'Kubernetes Service Connection'
-        kubernetesServiceEndpoint: 'AKSClusterRicardoSilverio'
+        kubernetesServiceEndpoint: 'AKSClusterRicardoSilverio-default'
         namespace: 'default'
         command: 'upgrade'
         chartName: 'caminho-do-helm-chart'
