@@ -28,3 +28,15 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
         tags: |
           $(tag)
+
+    - task: DockerInstaller@0
+      displayName: "Instalar Docker"
+
+    - script: |
+        az acr login --name ContainerRegistryRicardoSilverio
+        docker build -t ContainerRegistryRicardoSilverio.azurecr.io/Unyleya_RicardoSilverio:latest .
+      displayName: "Build da imagem Docker"
+
+    - script: |
+        docker push ContainerRegistryRicardoSilverio.azurecr.io/Unyleya_RicardoSilverio:latest
+      displayName: "Enviar imagem para ACR"
