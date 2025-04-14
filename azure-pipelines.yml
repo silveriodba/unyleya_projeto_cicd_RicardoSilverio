@@ -49,6 +49,7 @@ stages:
     displayName: "Implantação no Kubernetes"
     pool:
       vmImage: ubuntu-latest
+      name: 'Default'
       environment: ricardosilveriokubernets
     
     steps:
