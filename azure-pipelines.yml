@@ -34,11 +34,11 @@ stages:
 
     - script: |
         az acr login --name containerregistryricardosilverio
-        docker build -t containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:latest -f /var/lib/jenkins/myagent/_work/1/s/azure-vote/Dockerfile .
+        docker build -t containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:$(tag) -f /var/lib/jenkins/myagent/_work/1/s/azure-vote/Dockerfile .
       displayName: "Build da imagem Docker"
 
     - script: |
-        docker push containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:latest
+        docker push containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:$(tag)
       displayName: "Enviar imagem para ACR"
 
 # Adicionando estágio de Deploy via Helm
@@ -55,10 +55,15 @@ stages:
       inputs:
         helmVersion: 'latest'
 
+    - script: |
+        helm version
+        helm list --all
+      displayName: "Verificar Helm e Releases"
+
     - task: HelmDeploy@0
       inputs:
         connectionType: 'Kubernetes Service Connection'
-        kubernetesServiceEndpoint: 'NomeDoCluster'
+        kubernetesServiceEndpoint: 'AKSClusterRicardoSilverio'
         namespace: 'default'
         command: 'upgrade'
         chartName: 'caminho-do-helm-chart'
