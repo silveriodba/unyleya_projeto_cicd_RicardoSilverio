@@ -33,10 +33,10 @@ stages:
       displayName: "Instalar Docker"
 
     - script: |
-        az acr login --name ContainerRegistryRicardoSilverio
-        docker build -t ContainerRegistryRicardoSilverio.azurecr.io/Unyleya_RicardoSilverio:latest .
+        az acr login --name containerregistryricardosilverio
+        docker build -t containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:latest .
       displayName: "Build da imagem Docker"
 
     - script: |
-        docker push ContainerRegistryRicardoSilverio.azurecr.io/Unyleya_RicardoSilverio:latest
+        docker push containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:latest
       displayName: "Enviar imagem para ACR"
