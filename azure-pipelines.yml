@@ -34,7 +34,7 @@ stages:
 
     - script: |
         az acr login --name containerregistryricardosilverio
-        docker build -t containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:latest -f $(Build.SourcesDirectory)/azure-vote/Dockerfile
+        docker build -t containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio:latest -f /var/lib/jenkins/myagent/_work/1/s/azure-vote/Dockerfile .
       displayName: "Build da imagem Docker"
 
     - script: |
