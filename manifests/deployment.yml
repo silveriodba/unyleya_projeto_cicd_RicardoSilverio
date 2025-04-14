@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: silveriodbaunyleyaprojetocicdricardosilverio 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: silveriodbaunyleyaprojetocicdricardosilverio
+  template:
+    metadata:
+      labels:
+        app: silveriodbaunyleyaprojetocicdricardosilverio 
+    spec:
+      containers:
+        - name: silveriodbaunyleyaprojetocicdricardosilverio 
+          image: containerregistryricardosilverio.azurecr.io/silveriodbaunyleyaprojetocicdricardosilverio
+          ports:
+          - containerPort: 80
