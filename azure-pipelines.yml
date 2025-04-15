@@ -60,6 +60,7 @@ stages:
     - script: |
         helm version
         helm list --all
+        helm repo list
         kubectl get nodes
       displayName: "Verificar Helm e Releases"
 
@@ -70,5 +71,5 @@ stages:
         namespace: 'default'
         command: 'upgrade'
         chartName: 'caminho-do-helm-chart'
-        releaseName: 'nome-da-release'
+        releaseName: 'aks-default-33379090-vmss000000'
         arguments: '--set image.repository=containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio,image.tag=$(tag)'
