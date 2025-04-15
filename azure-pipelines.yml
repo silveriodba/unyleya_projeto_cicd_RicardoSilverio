@@ -68,8 +68,8 @@ stages:
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'AKSClusterRicardoSilverio-default'
-        namespace: 'default'
+        namespace: 'kube-system'
         command: 'upgrade'
-        chartName: 'caminho-do-helm-chart'
-        releaseName: 'aks-default-33379090-vmss000000'
+        chartName: 'aks-managed-overlay-upgrade-data'
+        releaseName: 'overlay-upgrade-data-addon-0.1.0-3306ac2d69cd70a5d127324597f7996aab68115b'
         arguments: '--set image.repository=containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio,image.tag=$(tag)'
