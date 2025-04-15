@@ -70,6 +70,6 @@ stages:
         kubernetesServiceEndpoint: 'AKSClusterRicardoSilverio-default'
         namespace: 'kube-system'
         command: 'upgrade'
-        chartName: 'aks-managed-overlay-upgrade-data'
-        releaseName: 'overlay-upgrade-data-addon-0.1.0-3306ac2d69cd70a5d127324597f7996aab68115b'
+        chartName: 'overlay-upgrade-data-addon-0.1.0-3306ac2d69cd70a5d127324597f7996aab68115b'
+        releaseName: 'aks-managed-overlay-upgrade-data'
         arguments: '--set image.repository=containerregistryricardosilverio.azurecr.io/unyleya_ricardosilverio,image.tag=$(tag)'
